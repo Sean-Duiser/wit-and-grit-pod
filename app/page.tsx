@@ -1,65 +1,81 @@
-import Image from "next/image";
+import Hero from '@/components/Hero';
+import EpisodeCard from '@/components/EpisodeCard';
+import VoicemailWidget from '@/components/VoicemailWidget';
+import ListenerReviews from '@/components/ListenerReviews';
+import { getLatestVideos } from '@/lib/youtube';
+import { episodesData } from '@/data/episodes';
+import { siteConfig } from '@/lib/config';
+import Link from 'next/link';
 
-export default function Home() {
+export const metadata = {
+  title: `${siteConfig.name} | ${siteConfig.description}`,
+};
+
+export default async function Home() {
+  const videos = await getLatestVideos(6);
+
+  const episodes = videos.map((video) => {
+    const showNotes = episodesData.find((e) => e.youtubeId === video.id);
+    return {
+      ...video,
+      topics: showNotes?.topics || [],
+    };
+  });
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
+    <>
+      <Hero />
+
+      <div className="max-w-7xl mx-auto px-6">
+        {/* Voicemail Widget */}
+        <VoicemailWidget />
+
+        {/* Ian's Substack Block */}
+        <div className="my-16 flex flex-col md:flex-row items-center gap-6 bg-slate-900 rounded-3xl p-8 border border-white/5">
+          <div className="flex-1">
+            <p className="text-yellow-400 text-xs font-bold tracking-widest uppercase mb-2">Ian Price · Newsletter</p>
+            <h2 className="text-3xl font-black text-white mb-3">All-In With Ian</h2>
+            <p className="text-slate-400 max-w-lg">
+              Full betting picks, F1 analysis, and sports breakdowns straight from Ian. Free on Substack — gambling content for entertainment only.
+            </p>
+          </div>
           <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+            href={siteConfig.links.substack}
             target="_blank"
             rel="noopener noreferrer"
+            className="shrink-0 px-8 py-3 rounded-full bg-white text-slate-900 font-black text-sm hover:bg-yellow-400 transition"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
+            Read on Substack →
           </a>
         </div>
-      </main>
-    </div>
+
+        {/* Latest Episodes */}
+        <div className="mb-16">
+          <div className="flex justify-between items-baseline mb-8">
+            <h2 className="text-4xl font-black uppercase tracking-tight">Latest Episodes</h2>
+            <Link href="/episodes" className="text-sm text-yellow-400 hover:text-yellow-300 font-bold uppercase tracking-wider transition">
+              View All →
+            </Link>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            {episodes.slice(0, 3).map((episode) => (
+              <EpisodeCard
+                key={episode.id}
+                id={episode.id}
+                youtubeId={episode.id}
+                title={episode.title}
+                description={episode.description}
+                thumbnail={episode.thumbnail}
+                publishedAt={episode.publishedAt}
+                topics={episode.topics}
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* Listener Reviews */}
+        <ListenerReviews />
+      </div>
+    </>
   );
 }
