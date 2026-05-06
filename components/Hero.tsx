@@ -39,13 +39,7 @@ export default function Hero() {
             </svg>
             Listen on Spotify
           </a>
-          <a href="https://podcasts.apple.com/podcast/wit-grit/id1234567890" target="_blank" rel="noopener noreferrer"
-            className="flex items-center gap-2 px-6 py-3 rounded-full border border-white/20 text-white font-bold text-sm hover:border-purple-400 hover:text-purple-400 transition">
-            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12.008 0C5.37 0 0 5.37 0 12.008c0 6.638 5.37 12.008 12.008 12.008 6.638 0 12.008-5.37 12.008-12.008C24.016 5.37 18.646 0 12.008 0zm0 4.507c2.16 0 3.916 1.756 3.916 3.916 0 2.16-1.756 3.916-3.916 3.916-2.16 0-3.916-1.756-3.916-3.916 0-2.16 1.756-3.916 3.916-3.916zm6.75 13.927c-1.612 2.26-4.22 3.737-7.158 3.737-2.938 0-5.546-1.477-7.158-3.737.097-2.547 2.173-4.587 4.745-4.587h4.826c2.572 0 4.648 2.04 4.745 4.587z"/>
-            </svg>
-            Apple Podcasts
-          </a>
+
         </div>
       </div>
     </section>

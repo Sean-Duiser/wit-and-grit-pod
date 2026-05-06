@@ -24,7 +24,7 @@ export default function AboutPage() {
           <h2 className="text-2xl font-bold mb-4">Where to Find Us</h2>
           <ul className="text-slate-300 text-lg space-y-3">
             <li><strong>YouTube:</strong> New episodes every week</li>
-            <li><strong>Spotify & Apple Podcasts:</strong> Full podcast feed</li>
+            <li><strong>Spotify:</strong> Full podcast feed</li>
             <li><strong>Sports Radio 101.1 FM (Roanoke)</strong> and <strong>107.5 FM (Lynchburg)</strong></li>
             <li><strong>Substack:</strong> Deep-dive betting picks and F1 analysis with All-In With Ian</li>
           </ul>

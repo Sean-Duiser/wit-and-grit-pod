@@ -47,7 +47,6 @@ export default function Footer() {
               <ul className="space-y-3 text-sm">
                 <li><a href={siteConfig.links.youtube} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-yellow-400 transition">YouTube</a></li>
                 <li><a href={siteConfig.links.spotify} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-yellow-400 transition">Spotify</a></li>
-                <li><a href={siteConfig.links.applePodcasts} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-yellow-400 transition">Apple Podcasts</a></li>
               </ul>
             </div>
           </div>
