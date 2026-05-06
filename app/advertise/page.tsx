@@ -58,40 +58,10 @@ export default function AdvertisePage() {
         </div>
       </section>
 
-      <section className="bg-slate-800 rounded-lg p-8 border border-slate-700 mb-12">
-        <h2 className="text-2xl font-bold mb-4">Why Partner With Us?</h2>
-        <ul className="text-slate-300 space-y-3">
-          <li className="flex gap-3">
-            <span>OK</span>
-            <span>Engaged, niche audience of sports fans and bettors</span>
-          </li>
-          <li className="flex gap-3">
-            <span>OK</span>
-            <span>Authentic, host-read ads (no generic reads)</span>
-          </li>
-          <li className="flex gap-3">
-            <span>OK</span>
-            <span>Multi-platform presence (YouTube, Podcasts, Radio)</span>
-          </li>
-          <li className="flex gap-3">
-            <span>OK</span>
-            <span>Growing audience week over week</span>
-          </li>
-          <li className="flex gap-3">
-            <span>OK</span>
-            <span>Fast response times and flexible packages</span>
-          </li>
-        </ul>
-      </section>
-
-      <div className="text-center bg-gradient-to-r from-purple-900 to-blue-900 rounded-lg p-12">
-        <h2 className="text-3xl font-bold mb-4">Ready to Get Started?</h2>
-        <p className="text-lg text-purple-100 mb-6">
-          Let's work together to reach your audience.
-        </p>
+      <div className="text-center mb-12">
         <a
           href="mailto:contact@witandgritpodcast.com"
-          className="bg-white text-blue-900 hover:bg-slate-100 px-8 py-3 rounded-lg font-bold transition inline-block"
+          className="bg-yellow-400 text-slate-950 hover:bg-yellow-300 px-8 py-3 rounded-lg font-bold transition inline-block"
         >
           Get in Touch
         </a>
