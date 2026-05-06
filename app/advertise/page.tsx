@@ -93,11 +93,14 @@ export default function AdvertisePage() {
 
       <div className="text-center mb-12">
         <a
-          href="mailto:hammeredsharkprod@gmail.com"
+          href="https://mail.google.com/mail/?view=cm&to=hammeredsharkprod@gmail.com&su=Advertising%20Inquiry%20-%20Wit%20%26%20Grit"
+          target="_blank"
+          rel="noopener noreferrer"
           className="bg-yellow-400 text-slate-950 hover:bg-yellow-300 px-8 py-3 rounded-lg font-bold transition inline-block"
         >
           Get in Touch
         </a>
+        <p className="text-slate-500 text-sm mt-3">hammeredsharkprod@gmail.com</p>
       </div>
     </div>
   );
