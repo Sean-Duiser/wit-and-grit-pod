@@ -48,7 +48,7 @@ function getMockVideos(): YouTubeVideo[] {
     {
       id: 'e3hpgrh',
       title: 'NFL Draft 2026 Prospects, F1 Controversy & NFL Media Scandal',
-      description: 'The NFL Draft 2026, Formula 1 controversy, and an NFL media scandal headline this episode of Wit & Grit with Ian Price and Sean Dizer.',
+      description: 'The NFL Draft 2026, Formula 1 controversy, and an NFL media scandal headline this episode of Wit & Grit with Ian Price and Sean Duiser.',
       thumbnail: 'https://img.youtube.com/vi/e3hpgrh/maxresdefault.jpg',
       publishedAt: '2026-04-12T12:00:00Z',
       channelId: YOUTUBE_CHANNEL_ID,

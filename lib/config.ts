@@ -27,10 +27,10 @@ export const siteConfig = {
       substack: 'https://allinwithian.substack.com',
     },
     {
-      name: 'Sean Dizer',
+      name: 'Sean Duiser',
       role: 'Co-host, Gut Instinct',
       bio: 'Brings the intuition, the passion, and the takes that stick.',
-      image: '/images/sean-dizer.jpg',
+      image: '/images/sean-duiser.jpg',
     },
   ],
 };
