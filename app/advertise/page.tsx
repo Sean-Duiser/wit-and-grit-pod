@@ -93,7 +93,7 @@ export default function AdvertisePage() {
 
       <div className="text-center mb-12">
         <a
-          href="mailto:contact@witandgritpodcast.com"
+          href="mailto:hammeredsharkprod@gmail.com"
           className="bg-yellow-400 text-slate-950 hover:bg-yellow-300 px-8 py-3 rounded-lg font-bold transition inline-block"
         >
           Get in Touch
